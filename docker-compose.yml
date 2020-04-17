@@ -1,0 +1,34 @@
+version: '3.3'
+
+services:
+  phpapache:
+    #image: php:7.4.4-apache
+    build: ./php
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - mysql
+    volumes:
+      - ./www:/var/www/html
+      - ./php/log:/var/log/php_log
+  mysql:
+    #build: ./mysql
+    image: mysql:8.0
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./mysql/data:/var/lib/mysql
+    environment:
+      MYSQL_ROOT_PASSWORD: admin
+      MYSQL_ROOT_HOST: '%'
+      #MYSQL_DATABASE: testdb
+  phpmyadmin:
+    image: phpmyadmin/phpmyadmin
+    ports:
+      - "10080:80"
+    depends_on:
+      - mysql
+    environment:
+      PMA_HOST: mysql
+      PMA_PORT: 3306
