@@ -1,6 +1,12 @@
 # docker-lamp-stack
 Containerized LAMP stack, separate lamp into apache-php, mysql, and phpmyadmin (3 containers)
 
+## Prerequisite
+```
+docker
+docker-compose
+```
+
 ## Usage guide
 
 ### Run the containers and services
@@ -111,7 +117,7 @@ If you edit php/Dockerfile or configure a new Dockerfile,
 
 you should run `docker-compose build` to rebuild and apply the changes to your images/containers.
 
-That is because docker-compose use **cache** to speed up, and without rebuilding the images will not apply changes.
+That is because docker-compose use **cache** to speed up, and it will not apply changes until rebuilding the images.
 
 ### Install php modules
 Most "default" modules are not loaded/installed in the php container
@@ -122,7 +128,7 @@ php-docker provide `docker-php-ext-install` for installing modules (you will nee
 
 [php docker document](https://hub.docker.com/_/php)
 
-And don't forget to edit/enable the modules you installed in `php/php.ini`,
+And don't forget to edit/enable the modules in `php/php.ini`,
 
 This configuration will be copied into the container automatically.
 
