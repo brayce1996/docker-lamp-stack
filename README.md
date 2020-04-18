@@ -2,31 +2,28 @@
 Containerized LAMP stack, separate lamp into apache-php, mysql, and phpmyadmin (3 containers)
 
 ## Prerequisite
+
+### for Linux
 ```
-docker
-docker-compose
+# install docker-compose
+$ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+$ sudo chmod +x /usr/local/bin/docker-compose
 ```
 
 ## Usage guide
 
 ### Run the containers and services
-First, clone the repo
 ```
+# First, clone the repo
 $ git clone https://github.com/brayce1996/docker-lamp-stack.git
-```
 
-then switch to the cloned directory
-```
+# then switch to the cloned directory
 $ cd docker-lamp-stack
-```
 
-and use `docker-compose` to build the lamp images
-```
+# and use `docker-compose` to build the lamp images
 $ docker-compose build
-```
 
-run the services in background
-```
+# run the services in background
 $ docker-compose up -d
 ```
 
