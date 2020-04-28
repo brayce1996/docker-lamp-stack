@@ -5,6 +5,10 @@ Containerized LAMP stack, separate lamp into apache-php, mysql, and phpmyadmin (
 
 ### for Linux
 ```
+# install docker.io
+$ sudo apt-get update
+$ sudo apt-get install docker.io
+
 # install docker-compose
 $ sudo curl -L "https://github.com/docker/compose/releases/download/1.25.5/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
 $ sudo chmod +x /usr/local/bin/docker-compose
@@ -21,10 +25,10 @@ $ git clone https://github.com/brayce1996/docker-lamp-stack.git
 $ cd docker-lamp-stack
 
 # and use `docker-compose` to build the lamp images
-$ docker-compose build
+$ sudo docker-compose build
 
 # run the services in background
-$ docker-compose up -d
+$ sudo docker-compose up -d
 ```
 
 ### Connect to the services
@@ -47,11 +51,11 @@ password: admin
 ### Stop the services
 when you want to pause it
 ```
-$ docker-compose pause
+$ sudo docker-compose pause
 ```
 or stop and remove it
 ```
-$ docker-compose down
+$ sudo docker-compose down
 ```
 
 for more instructions, you can reference [docker-compose document](https://docs.docker.com/compose/reference/overview/), or simply get help by
