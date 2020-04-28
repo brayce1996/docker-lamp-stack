@@ -133,3 +133,11 @@ And don't forget to edit/enable the modules in `php/php.ini`,
 
 This configuration will be copied into the container automatically.
 
+## Troubleshoot
+
+### ERROR: Couldn't connect to Docker daemon
+```
+$ docker-compose build
+ERROR: Couldn't connect to Docker daemon at http+docker://localhost - is it running?
+```
+Please use `sudo` before any `docker-compose` command to make this work.
